@@ -1,13 +1,13 @@
 //
-//  SWHero.m
+//  SWMage.h
 //  SWCards
 //
-//  Created by songlong on 16/5/23.
+//  Created by songlong on 16/5/24.
 //  Copyright © 2016年 SaberGame. All rights reserved.
 //
 
 #import "SWHero.h"
 
-@implementation SWHero
+@interface SWMage : SWHero
 
 @end

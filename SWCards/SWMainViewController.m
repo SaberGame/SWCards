@@ -9,6 +9,7 @@
 #import "SWMainViewController.h"
 #import <Masonry.h>
 #import "SWCollectionViewController.h"
+#import "SWBattleViewController.h"
 
 @interface SWMainViewController ()
 
@@ -59,10 +60,24 @@
         make.left.mas_equalTo(10);
         make.bottom.equalTo(shopButton.mas_top).offset(-10);
     }];
+    
+    UIButton *battleButton = [[UIButton alloc] initWithFrame:CGRectZero];
+    [battleButton setTitle:@"Battle" forState:UIControlStateNormal];
+    [battleButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [battleButton addTarget:self action:@selector(clickBattle) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:battleButton];
+    [battleButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(0);
+    }];
 }
 
 - (void)clickCollectionButton {
     SWCollectionViewController *vc = [[SWCollectionViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)clickBattle {
+    SWBattleViewController *vc = [[SWBattleViewController alloc] init];
     [self presentViewController:vc animated:YES completion:nil];
 }
 

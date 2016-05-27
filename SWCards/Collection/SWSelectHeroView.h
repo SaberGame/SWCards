@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SWHero;
 
 @interface SWSelectHeroView : UIView
 
-
+- (instancetype)initWithFrame:(CGRect)frame andBlock:(void(^)(SWHero *hero))block;
 
 @end

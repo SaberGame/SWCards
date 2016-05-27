@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class SWHero;
 
 @interface SWDeck : NSObject
 
@@ -14,5 +15,7 @@
 
 @property (nonatomic, copy) NSString *iconName;
 @property (nonatomic, copy) NSString *deckName;
+
+@property (nonatomic, strong) SWHero *deckHero;
 
 @end

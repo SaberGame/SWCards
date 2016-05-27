@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface SWHero : NSObject
 
+@property (nonatomic, copy) NSString *heroName;
+@property (nonatomic, assign) NSInteger heroLife;
+@property (nonatomic, copy) NSString *heroImageName;
+
++ (NSArray *)allHeros;
 
 @end

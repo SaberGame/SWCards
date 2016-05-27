@@ -7,9 +7,15 @@
 //
 
 #import "SWDeck.h"
+#import "SWHero.h"
 
 @implementation SWDeck
 
-
+- (instancetype)init {
+    if (self = [super init]) {
+        self.deckHero = [[SWHero alloc] init];
+    }
+    return self;
+}
 
 @end

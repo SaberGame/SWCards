@@ -12,10 +12,29 @@
 		3B3AE8AB1CEB2D39007D0068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3AE8AA1CEB2D39007D0068 /* Assets.xcassets */; };
 		3B3AE8AE1CEB2D39007D0068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3AE8AC1CEB2D39007D0068 /* LaunchScreen.storyboard */; };
 		3B3AE8B71CEB2E5A007D0068 /* SWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3AE8B61CEB2E5A007D0068 /* SWMainViewController.m */; };
-		3BD7AFAA1CF2A6F300D1080C /* SWCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFA91CF2A6F300D1080C /* SWCollectionViewController.m */; };
-		3BD7AFAD1CF2A8FA00D1080C /* SWDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFAC1CF2A8FA00D1080C /* SWDeck.m */; };
-		3BD7AFB01CF2AD3200D1080C /* SWHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFAF1CF2AD3200D1080C /* SWHero.m */; };
-		3BD7AFB31CF2AD9200D1080C /* SWSelectHeroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFB21CF2AD9200D1080C /* SWSelectHeroView.m */; };
+		3BD7AFE71CF4434900D1080C /* SWHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFE61CF4434900D1080C /* SWHero.m */; };
+		3BD7AFEA1CF4435F00D1080C /* SWMage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFE91CF4435F00D1080C /* SWMage.m */; };
+		3BD7B0091CF6A36200D1080C /* SWWarrior.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0081CF6A36200D1080C /* SWWarrior.m */; };
+		3BD7B00F1CF6EF4200D1080C /* SWCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B00C1CF6EF4200D1080C /* SWCollectionViewController.m */; };
+		3BD7B0101CF6EF4200D1080C /* SWSelectHeroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B00E1CF6EF4200D1080C /* SWSelectHeroView.m */; };
+		3BD7B0151CF6EF7100D1080C /* SWDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0141CF6EF7100D1080C /* SWDeck.m */; };
+		3BD7B0181CF7025800D1080C /* SWCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0171CF7025800D1080C /* SWCard.m */; };
+		3BD7B02B1CF703B900D1080C /* SWEquip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0241CF703B900D1080C /* SWEquip.m */; };
+		3BD7B02C1CF703B900D1080C /* SWMinion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0271CF703B900D1080C /* SWMinion.m */; };
+		3BD7B02D1CF703B900D1080C /* SWSpell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B02A1CF703B900D1080C /* SWSpell.m */; };
+		3BD7B0331CF7046F00D1080C /* 松鼠.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7B0301CF7046F00D1080C /* 松鼠.png */; };
+		3BD7B0341CF7046F00D1080C /* 迅猛龙.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7B0311CF7046F00D1080C /* 迅猛龙.png */; };
+		3BD7B0351CF7046F00D1080C /* 野猪.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7B0321CF7046F00D1080C /* 野猪.png */; };
+		3BD7B03B1CF704C400D1080C /* SWXunMengLong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B03A1CF704C400D1080C /* SWXunMengLong.m */; };
+		3BD7B03E1CF7095100D1080C /* SWYeZhu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B03D1CF7095100D1080C /* SWYeZhu.m */; };
+		3BD7B0411CF7095700D1080C /* SWSongShu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0401CF7095700D1080C /* SWSongShu.m */; };
+		3BD7B0441CF70A4300D1080C /* MinionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7B0431CF70A4300D1080C /* MinionList.plist */; };
+		3BD7B0731CF7E85D00D1080C /* SWDeckCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0721CF7E85D00D1080C /* SWDeckCard.m */; };
+		3BD7B0771CF7F31E00D1080C /* SWBattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0761CF7F31E00D1080C /* SWBattleViewController.m */; };
+		3BD7B07B1CF7F42E00D1080C /* SWPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B07A1CF7F42E00D1080C /* SWPlayer.m */; };
+		3BD7B07E1CF7F4E800D1080C /* SWEasyAI.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B07D1CF7F4E800D1080C /* SWEasyAI.m */; };
+		3BD7B0861CF7F68200D1080C /* SWCurrentPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0851CF7F68200D1080C /* SWCurrentPlayer.m */; };
+		3BD7B0881CF7F8E400D1080C /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7B0871CF7F8E400D1080C /* qq.png */; };
 		815C298EC215D74F0204DBF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1403300E98A7B7459DD35D97 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -30,14 +49,47 @@
 		3B3AE8AF1CEB2D39007D0068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B3AE8B51CEB2E5A007D0068 /* SWMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMainViewController.h; sourceTree = "<group>"; };
 		3B3AE8B61CEB2E5A007D0068 /* SWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMainViewController.m; sourceTree = "<group>"; };
-		3BD7AFA81CF2A6F300D1080C /* SWCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCollectionViewController.h; sourceTree = "<group>"; };
-		3BD7AFA91CF2A6F300D1080C /* SWCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCollectionViewController.m; sourceTree = "<group>"; };
-		3BD7AFAB1CF2A8FA00D1080C /* SWDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDeck.h; sourceTree = "<group>"; };
-		3BD7AFAC1CF2A8FA00D1080C /* SWDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDeck.m; sourceTree = "<group>"; };
-		3BD7AFAE1CF2AD3200D1080C /* SWHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHero.h; sourceTree = "<group>"; };
-		3BD7AFAF1CF2AD3200D1080C /* SWHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHero.m; sourceTree = "<group>"; };
-		3BD7AFB11CF2AD9200D1080C /* SWSelectHeroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSelectHeroView.h; sourceTree = "<group>"; };
-		3BD7AFB21CF2AD9200D1080C /* SWSelectHeroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSelectHeroView.m; sourceTree = "<group>"; };
+		3BD7AFE51CF4434900D1080C /* SWHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHero.h; sourceTree = "<group>"; };
+		3BD7AFE61CF4434900D1080C /* SWHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHero.m; sourceTree = "<group>"; };
+		3BD7AFE81CF4435F00D1080C /* SWMage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMage.h; sourceTree = "<group>"; };
+		3BD7AFE91CF4435F00D1080C /* SWMage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMage.m; sourceTree = "<group>"; };
+		3BD7B0071CF6A36200D1080C /* SWWarrior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWWarrior.h; sourceTree = "<group>"; };
+		3BD7B0081CF6A36200D1080C /* SWWarrior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWWarrior.m; sourceTree = "<group>"; };
+		3BD7B00B1CF6EF4200D1080C /* SWCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCollectionViewController.h; sourceTree = "<group>"; };
+		3BD7B00C1CF6EF4200D1080C /* SWCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCollectionViewController.m; sourceTree = "<group>"; };
+		3BD7B00D1CF6EF4200D1080C /* SWSelectHeroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSelectHeroView.h; sourceTree = "<group>"; };
+		3BD7B00E1CF6EF4200D1080C /* SWSelectHeroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSelectHeroView.m; sourceTree = "<group>"; };
+		3BD7B0131CF6EF7100D1080C /* SWDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDeck.h; sourceTree = "<group>"; };
+		3BD7B0141CF6EF7100D1080C /* SWDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDeck.m; sourceTree = "<group>"; };
+		3BD7B0161CF7025800D1080C /* SWCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCard.h; sourceTree = "<group>"; };
+		3BD7B0171CF7025800D1080C /* SWCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCard.m; sourceTree = "<group>"; };
+		3BD7B0231CF703B900D1080C /* SWEquip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWEquip.h; sourceTree = "<group>"; };
+		3BD7B0241CF703B900D1080C /* SWEquip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWEquip.m; sourceTree = "<group>"; };
+		3BD7B0261CF703B900D1080C /* SWMinion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMinion.h; sourceTree = "<group>"; };
+		3BD7B0271CF703B900D1080C /* SWMinion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMinion.m; sourceTree = "<group>"; };
+		3BD7B0291CF703B900D1080C /* SWSpell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSpell.h; sourceTree = "<group>"; };
+		3BD7B02A1CF703B900D1080C /* SWSpell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSpell.m; sourceTree = "<group>"; };
+		3BD7B0301CF7046F00D1080C /* 松鼠.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "松鼠.png"; sourceTree = "<group>"; };
+		3BD7B0311CF7046F00D1080C /* 迅猛龙.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "迅猛龙.png"; sourceTree = "<group>"; };
+		3BD7B0321CF7046F00D1080C /* 野猪.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "野猪.png"; sourceTree = "<group>"; };
+		3BD7B0391CF704C400D1080C /* SWXunMengLong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWXunMengLong.h; sourceTree = "<group>"; };
+		3BD7B03A1CF704C400D1080C /* SWXunMengLong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWXunMengLong.m; sourceTree = "<group>"; };
+		3BD7B03C1CF7095100D1080C /* SWYeZhu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWYeZhu.h; sourceTree = "<group>"; };
+		3BD7B03D1CF7095100D1080C /* SWYeZhu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWYeZhu.m; sourceTree = "<group>"; };
+		3BD7B03F1CF7095700D1080C /* SWSongShu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSongShu.h; sourceTree = "<group>"; };
+		3BD7B0401CF7095700D1080C /* SWSongShu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSongShu.m; sourceTree = "<group>"; };
+		3BD7B0431CF70A4300D1080C /* MinionList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MinionList.plist; sourceTree = "<group>"; };
+		3BD7B0711CF7E85D00D1080C /* SWDeckCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDeckCard.h; sourceTree = "<group>"; };
+		3BD7B0721CF7E85D00D1080C /* SWDeckCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDeckCard.m; sourceTree = "<group>"; };
+		3BD7B0751CF7F31E00D1080C /* SWBattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBattleViewController.h; sourceTree = "<group>"; };
+		3BD7B0761CF7F31E00D1080C /* SWBattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBattleViewController.m; sourceTree = "<group>"; };
+		3BD7B0791CF7F42E00D1080C /* SWPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWPlayer.h; sourceTree = "<group>"; };
+		3BD7B07A1CF7F42E00D1080C /* SWPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWPlayer.m; sourceTree = "<group>"; };
+		3BD7B07C1CF7F4E800D1080C /* SWEasyAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWEasyAI.h; sourceTree = "<group>"; };
+		3BD7B07D1CF7F4E800D1080C /* SWEasyAI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWEasyAI.m; sourceTree = "<group>"; };
+		3BD7B0841CF7F68200D1080C /* SWCurrentPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCurrentPlayer.h; sourceTree = "<group>"; };
+		3BD7B0851CF7F68200D1080C /* SWCurrentPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCurrentPlayer.m; sourceTree = "<group>"; };
+		3BD7B0871CF7F8E400D1080C /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq.png; sourceTree = "<group>"; };
 		BB1955DC91C04802C7B1FA57 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FBD445B1E31399629722E25B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,14 +131,13 @@
 				3B3AE8A21CEB2D39007D0068 /* AppDelegate.m */,
 				3B3AE8B51CEB2E5A007D0068 /* SWMainViewController.h */,
 				3B3AE8B61CEB2E5A007D0068 /* SWMainViewController.m */,
-				3BD7AFA81CF2A6F300D1080C /* SWCollectionViewController.h */,
-				3BD7AFA91CF2A6F300D1080C /* SWCollectionViewController.m */,
-				3BD7AFAB1CF2A8FA00D1080C /* SWDeck.h */,
-				3BD7AFAC1CF2A8FA00D1080C /* SWDeck.m */,
-				3BD7AFAE1CF2AD3200D1080C /* SWHero.h */,
-				3BD7AFAF1CF2AD3200D1080C /* SWHero.m */,
-				3BD7AFB11CF2AD9200D1080C /* SWSelectHeroView.h */,
-				3BD7AFB21CF2AD9200D1080C /* SWSelectHeroView.m */,
+				3BD7B0111CF6EF7100D1080C /* Card */,
+				3BD7B0121CF6EF7100D1080C /* Deck */,
+				3BD7AFE41CF4434900D1080C /* Hero */,
+				3BD7B0781CF7F41C00D1080C /* Player */,
+				3BD7B00A1CF6EF4200D1080C /* Collection */,
+				3BD7B0741CF7F31100D1080C /* Battle */,
+				3BD7B02E1CF7046F00D1080C /* Resource */,
 				3B3AE89E1CEB2D39007D0068 /* Supporting Files */,
 			);
 			path = SWCards;
@@ -101,6 +152,136 @@
 				3B3AE89F1CEB2D39007D0068 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3BD7AFE41CF4434900D1080C /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7AFE51CF4434900D1080C /* SWHero.h */,
+				3BD7AFE61CF4434900D1080C /* SWHero.m */,
+				3BD7AFE81CF4435F00D1080C /* SWMage.h */,
+				3BD7AFE91CF4435F00D1080C /* SWMage.m */,
+				3BD7B0071CF6A36200D1080C /* SWWarrior.h */,
+				3BD7B0081CF6A36200D1080C /* SWWarrior.m */,
+			);
+			path = Hero;
+			sourceTree = "<group>";
+		};
+		3BD7B00A1CF6EF4200D1080C /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B00B1CF6EF4200D1080C /* SWCollectionViewController.h */,
+				3BD7B00C1CF6EF4200D1080C /* SWCollectionViewController.m */,
+				3BD7B00D1CF6EF4200D1080C /* SWSelectHeroView.h */,
+				3BD7B00E1CF6EF4200D1080C /* SWSelectHeroView.m */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		3BD7B0111CF6EF7100D1080C /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B0161CF7025800D1080C /* SWCard.h */,
+				3BD7B0171CF7025800D1080C /* SWCard.m */,
+				3BD7B0221CF703B900D1080C /* Equip */,
+				3BD7B0251CF703B900D1080C /* Minion */,
+				3BD7B0281CF703B900D1080C /* Spell */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		3BD7B0121CF6EF7100D1080C /* Deck */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B0131CF6EF7100D1080C /* SWDeck.h */,
+				3BD7B0141CF6EF7100D1080C /* SWDeck.m */,
+				3BD7B0711CF7E85D00D1080C /* SWDeckCard.h */,
+				3BD7B0721CF7E85D00D1080C /* SWDeckCard.m */,
+			);
+			path = Deck;
+			sourceTree = "<group>";
+		};
+		3BD7B0221CF703B900D1080C /* Equip */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B0231CF703B900D1080C /* SWEquip.h */,
+				3BD7B0241CF703B900D1080C /* SWEquip.m */,
+			);
+			path = Equip;
+			sourceTree = "<group>";
+		};
+		3BD7B0251CF703B900D1080C /* Minion */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B0261CF703B900D1080C /* SWMinion.h */,
+				3BD7B0271CF703B900D1080C /* SWMinion.m */,
+				3BD7B0391CF704C400D1080C /* SWXunMengLong.h */,
+				3BD7B03A1CF704C400D1080C /* SWXunMengLong.m */,
+				3BD7B03C1CF7095100D1080C /* SWYeZhu.h */,
+				3BD7B03D1CF7095100D1080C /* SWYeZhu.m */,
+				3BD7B03F1CF7095700D1080C /* SWSongShu.h */,
+				3BD7B0401CF7095700D1080C /* SWSongShu.m */,
+			);
+			path = Minion;
+			sourceTree = "<group>";
+		};
+		3BD7B0281CF703B900D1080C /* Spell */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B0291CF703B900D1080C /* SWSpell.h */,
+				3BD7B02A1CF703B900D1080C /* SWSpell.m */,
+			);
+			path = Spell;
+			sourceTree = "<group>";
+		};
+		3BD7B02E1CF7046F00D1080C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B0421CF70A4300D1080C /* Plist */,
+				3BD7B02F1CF7046F00D1080C /* Images */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		3BD7B02F1CF7046F00D1080C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B0871CF7F8E400D1080C /* qq.png */,
+				3BD7B0301CF7046F00D1080C /* 松鼠.png */,
+				3BD7B0311CF7046F00D1080C /* 迅猛龙.png */,
+				3BD7B0321CF7046F00D1080C /* 野猪.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		3BD7B0421CF70A4300D1080C /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B0431CF70A4300D1080C /* MinionList.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		3BD7B0741CF7F31100D1080C /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B0751CF7F31E00D1080C /* SWBattleViewController.h */,
+				3BD7B0761CF7F31E00D1080C /* SWBattleViewController.m */,
+			);
+			path = Battle;
+			sourceTree = "<group>";
+		};
+		3BD7B0781CF7F41C00D1080C /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7B0791CF7F42E00D1080C /* SWPlayer.h */,
+				3BD7B07A1CF7F42E00D1080C /* SWPlayer.m */,
+				3BD7B07C1CF7F4E800D1080C /* SWEasyAI.h */,
+				3BD7B07D1CF7F4E800D1080C /* SWEasyAI.m */,
+				3BD7B0841CF7F68200D1080C /* SWCurrentPlayer.h */,
+				3BD7B0851CF7F68200D1080C /* SWCurrentPlayer.m */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		B2793F8D9304764E954E7463 /* Frameworks */ = {
@@ -181,8 +362,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD7B0351CF7046F00D1080C /* 野猪.png in Resources */,
+				3BD7B0881CF7F8E400D1080C /* qq.png in Resources */,
 				3B3AE8AE1CEB2D39007D0068 /* LaunchScreen.storyboard in Resources */,
 				3B3AE8AB1CEB2D39007D0068 /* Assets.xcassets in Resources */,
+				3BD7B0331CF7046F00D1080C /* 松鼠.png in Resources */,
+				3BD7B0441CF70A4300D1080C /* MinionList.plist in Resources */,
+				3BD7B0341CF7046F00D1080C /* 迅猛龙.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,13 +427,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BD7AFB31CF2AD9200D1080C /* SWSelectHeroView.m in Sources */,
-				3BD7AFAA1CF2A6F300D1080C /* SWCollectionViewController.m in Sources */,
-				3BD7AFAD1CF2A8FA00D1080C /* SWDeck.m in Sources */,
+				3BD7AFE71CF4434900D1080C /* SWHero.m in Sources */,
+				3BD7B02C1CF703B900D1080C /* SWMinion.m in Sources */,
+				3BD7B0091CF6A36200D1080C /* SWWarrior.m in Sources */,
+				3BD7B07B1CF7F42E00D1080C /* SWPlayer.m in Sources */,
+				3BD7B03E1CF7095100D1080C /* SWYeZhu.m in Sources */,
 				3B3AE8B71CEB2E5A007D0068 /* SWMainViewController.m in Sources */,
+				3BD7B0101CF6EF4200D1080C /* SWSelectHeroView.m in Sources */,
+				3BD7B0731CF7E85D00D1080C /* SWDeckCard.m in Sources */,
+				3BD7B02B1CF703B900D1080C /* SWEquip.m in Sources */,
+				3BD7B0771CF7F31E00D1080C /* SWBattleViewController.m in Sources */,
+				3BD7B0411CF7095700D1080C /* SWSongShu.m in Sources */,
+				3BD7B03B1CF704C400D1080C /* SWXunMengLong.m in Sources */,
+				3BD7B00F1CF6EF4200D1080C /* SWCollectionViewController.m in Sources */,
+				3BD7B0181CF7025800D1080C /* SWCard.m in Sources */,
+				3BD7B0861CF7F68200D1080C /* SWCurrentPlayer.m in Sources */,
 				3B3AE8A31CEB2D39007D0068 /* AppDelegate.m in Sources */,
+				3BD7B0151CF6EF7100D1080C /* SWDeck.m in Sources */,
 				3B3AE8A01CEB2D39007D0068 /* main.m in Sources */,
-				3BD7AFB01CF2AD3200D1080C /* SWHero.m in Sources */,
+				3BD7B02D1CF703B900D1080C /* SWSpell.m in Sources */,
+				3BD7AFEA1CF4435F00D1080C /* SWMage.m in Sources */,
+				3BD7B07E1CF7F4E800D1080C /* SWEasyAI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

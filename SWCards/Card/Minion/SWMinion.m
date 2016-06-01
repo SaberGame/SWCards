@@ -10,6 +10,11 @@
 
 @implementation SWMinion
 
-
+- (instancetype)init {
+    if (self = [super init]) {
+        self.cardType = @"Minion";
+    }
+    return self;
+}
 
 @end

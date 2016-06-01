@@ -9,7 +9,8 @@
 #import "SWMainViewController.h"
 #import <Masonry.h>
 #import "SWCollectionViewController.h"
-#import "SWBattleViewController.h"
+#import "SWDeckSelectViewController.h"
+
 
 @interface SWMainViewController ()
 
@@ -77,7 +78,7 @@
 }
 
 - (void)clickBattle {
-    SWBattleViewController *vc = [[SWBattleViewController alloc] init];
+    SWDeckSelectViewController *vc = [[SWDeckSelectViewController alloc] init];
     [self presentViewController:vc animated:YES completion:nil];
 }
 

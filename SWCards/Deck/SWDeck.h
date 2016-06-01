@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class SWHero;
+@class SWCard;
 
 @interface SWDeck : NSObject
 
@@ -17,5 +18,9 @@
 @property (nonatomic, copy) NSString *deckName;
 
 @property (nonatomic, strong) SWHero *deckHero;
+
++ (NSInteger)deckCapacity;
+
+- (SWCard *)drawCard;
 
 @end

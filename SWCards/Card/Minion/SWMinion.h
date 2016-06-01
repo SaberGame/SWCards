@@ -8,10 +8,11 @@
 
 #import "SWCard.h"
 
+
 @interface SWMinion : SWCard
 
-@property (nonatomic, assign) NSInteger attack;
-@property (nonatomic, assign) NSInteger defense;
-@property (nonatomic, copy) NSString *minionType;
+//@property (nonatomic, assign) NSInteger attack;
+//@property (nonatomic, assign) NSInteger defense;
+//@property (nonatomic, copy) NSString *minionType;
 
 @end

@@ -8,10 +8,13 @@
 
 #import "SWCollectionViewController.h"
 #import <Masonry.h>
+#import <MJExtension.h>
 #import "SWSelectHeroView.h"
 #import "SWHero.h"
 #import "SWCard.h"
 #import "SWDeckCard.h"
+#import "SWDeck.h"
+
 
 static NSString *const poolCellId = @"poolCellId";
 
@@ -72,7 +75,9 @@ static NSString *const poolCellId = @"poolCellId";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (tableView == _deckListTableView) {
-       return 3;
+        NSArray *jsonArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"kDeckArray"];
+        NSMutableArray *deckArray = [[SWDeck mj_objectArrayWithKeyValuesArray:jsonArray] mutableCopy];
+        return deckArray.count;
     } else {
         return _deckCardsArray.count;
     }
@@ -161,6 +166,29 @@ static NSString *const poolCellId = @"poolCellId";
 
 #pragma mark -- Private Method
 
+- (void)commitDeck {
+    SWDeck *newDeck = [[SWDeck alloc] init];
+    newDeck.cardsArray = _cardsArray;
+    newDeck.deckName = @"new deck";
+    
+    NSMutableArray *deckArray = [NSMutableArray array];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"kDeckArray"]) {
+        
+    } else {
+        NSArray *jsonArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"kDeckArray"];
+        deckArray = [[SWDeck mj_objectArrayWithKeyValuesArray:jsonArray] mutableCopy];
+    }
+    [deckArray addObject:newDeck];
+    
+    NSArray *jsonArray = [SWDeck mj_keyValuesArrayWithObjectArray:deckArray];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:jsonArray forKey:@"kDeckArray"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [_cardListTableView removeFromSuperview];
+    [_deckListTableView reloadData];
+}
+
 - (void)createDeck {
     __weak typeof(self) weakself = self;
     _cardsArray = [NSMutableArray array];
@@ -209,16 +237,19 @@ static NSString *const poolCellId = @"poolCellId";
     
     SWCard *card = _pool[indexPath.item];
 
-    if (_cardsArray.count <= 30) {
+    if (_cardsArray.count <= [SWDeck deckCapacity]) {
         for (SWDeckCard *deckCard in _deckCardsArray) {
             if ([deckCard.card.cardName isEqualToString:card.cardName]) {
                 if (deckCard.count == 1) {
                     deckCard.count = 2;
                     [_cardsArray addObject:card];
                     [_cardListTableView reloadData];
+                    NSLog(@"%zd", _cardsArray.count);
+                    return;
+                } else if (deckCard.count == 2) {
                     return;
                 }
-            }
+             }
         }
         
         SWDeckCard *deckCard = [[SWDeckCard alloc] init];

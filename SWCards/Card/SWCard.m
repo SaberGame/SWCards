@@ -7,7 +7,6 @@
 //
 
 #import "SWCard.h"
-#import "SWXunMengLong.h"
 
 @implementation SWCard
 
@@ -21,6 +20,20 @@
         [allCards addObject:card];
     }
     return allCards.copy;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    
+    SWCard *card = [[SWCard alloc] init];
+    card.cardName = [self.cardName copyWithZone:zone];;
+    card.manaCost = self.manaCost;
+    card.cardImageName = [self.cardImageName copyWithZone:zone];
+    card.cardType = [self.cardType copyWithZone:zone];
+    card.minionType = [self.minionType copyWithZone:zone];
+    card.attack = self.attack;
+    card.defense = self.defense;
+    
+    return card;
 }
 
 @end

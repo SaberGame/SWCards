@@ -7,3 +7,4 @@
 
 pod 'Masonry'
 pod 'MBProgressHUD'
+pod 'MJExtension'

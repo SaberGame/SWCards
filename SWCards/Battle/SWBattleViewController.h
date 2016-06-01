@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SWDeck;
 
 @interface SWBattleViewController : UIViewController
+
+@property (nonatomic, strong) SWDeck *playerDeck;
+@property (nonatomic, strong) SWDeck *opponentDeck;
 
 @end

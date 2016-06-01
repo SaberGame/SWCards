@@ -12,6 +12,19 @@
 		3B3AE8AB1CEB2D39007D0068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3AE8AA1CEB2D39007D0068 /* Assets.xcassets */; };
 		3B3AE8AE1CEB2D39007D0068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3AE8AC1CEB2D39007D0068 /* LaunchScreen.storyboard */; };
 		3B3AE8B71CEB2E5A007D0068 /* SWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3AE8B61CEB2E5A007D0068 /* SWMainViewController.m */; };
+		3BB08EFB1CFC43550070FF94 /* SWXueZhaoXunMengLong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08EFA1CFC43550070FF94 /* SWXueZhaoXunMengLong.m */; };
+		3BB08EFE1CFC44670070FF94 /* 雏龙.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB08EFC1CFC44670070FF94 /* 雏龙.png */; };
+		3BB08EFF1CFC44670070FF94 /* 鱼人.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB08EFD1CFC44670070FF94 /* 鱼人.png */; };
+		3BB08F021CFC44890070FF94 /* SWChuLong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F011CFC44890070FF94 /* SWChuLong.m */; };
+		3BB08F051CFC44930070FF94 /* SWYuRen.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F041CFC44930070FF94 /* SWYuRen.m */; };
+		3BB08F071CFC44FF0070FF94 /* 冰风雪人.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB08F061CFC44FF0070FF94 /* 冰风雪人.png */; };
+		3BB08F0A1CFC452E0070FF94 /* SWBingFengXueRen.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F091CFC452E0070FF94 /* SWBingFengXueRen.m */; };
+		3BB08F0C1CFC456F0070FF94 /* 石拳食人魔.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB08F0B1CFC456F0070FF94 /* 石拳食人魔.png */; };
+		3BB08F0F1CFC45970070FF94 /* SWShiQuanShiRenMo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F0E1CFC45970070FF94 /* SWShiQuanShiRenMo.m */; };
+		3BB08F111CFC46360070FF94 /* 蜘蛛坦克.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB08F101CFC46360070FF94 /* 蜘蛛坦克.png */; };
+		3BB08F141CFC464D0070FF94 /* SWZhiZhuTanKe.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F131CFC464D0070FF94 /* SWZhiZhuTanKe.m */; };
+		3BB08F5D1CFD2B8C0070FF94 /* SWDeckSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F5C1CFD2B8C0070FF94 /* SWDeckSelectViewController.m */; };
+		3BB08F601CFD3BEE0070FF94 /* SWHandCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F5F1CFD3BEE0070FF94 /* SWHandCardCell.m */; };
 		3BD7AFE71CF4434900D1080C /* SWHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFE61CF4434900D1080C /* SWHero.m */; };
 		3BD7AFEA1CF4435F00D1080C /* SWMage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFE91CF4435F00D1080C /* SWMage.m */; };
 		3BD7B0091CF6A36200D1080C /* SWWarrior.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0081CF6A36200D1080C /* SWWarrior.m */; };
@@ -23,9 +36,8 @@
 		3BD7B02C1CF703B900D1080C /* SWMinion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0271CF703B900D1080C /* SWMinion.m */; };
 		3BD7B02D1CF703B900D1080C /* SWSpell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B02A1CF703B900D1080C /* SWSpell.m */; };
 		3BD7B0331CF7046F00D1080C /* 松鼠.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7B0301CF7046F00D1080C /* 松鼠.png */; };
-		3BD7B0341CF7046F00D1080C /* 迅猛龙.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7B0311CF7046F00D1080C /* 迅猛龙.png */; };
+		3BD7B0341CF7046F00D1080C /* 血沼迅猛龙.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7B0311CF7046F00D1080C /* 血沼迅猛龙.png */; };
 		3BD7B0351CF7046F00D1080C /* 野猪.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7B0321CF7046F00D1080C /* 野猪.png */; };
-		3BD7B03B1CF704C400D1080C /* SWXunMengLong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B03A1CF704C400D1080C /* SWXunMengLong.m */; };
 		3BD7B03E1CF7095100D1080C /* SWYeZhu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B03D1CF7095100D1080C /* SWYeZhu.m */; };
 		3BD7B0411CF7095700D1080C /* SWSongShu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0401CF7095700D1080C /* SWSongShu.m */; };
 		3BD7B0441CF70A4300D1080C /* MinionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BD7B0431CF70A4300D1080C /* MinionList.plist */; };
@@ -49,6 +61,27 @@
 		3B3AE8AF1CEB2D39007D0068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B3AE8B51CEB2E5A007D0068 /* SWMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMainViewController.h; sourceTree = "<group>"; };
 		3B3AE8B61CEB2E5A007D0068 /* SWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMainViewController.m; sourceTree = "<group>"; };
+		3BB08EF91CFC43550070FF94 /* SWXueZhaoXunMengLong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWXueZhaoXunMengLong.h; sourceTree = "<group>"; };
+		3BB08EFA1CFC43550070FF94 /* SWXueZhaoXunMengLong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWXueZhaoXunMengLong.m; sourceTree = "<group>"; };
+		3BB08EFC1CFC44670070FF94 /* 雏龙.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "雏龙.png"; sourceTree = "<group>"; };
+		3BB08EFD1CFC44670070FF94 /* 鱼人.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鱼人.png"; sourceTree = "<group>"; };
+		3BB08F001CFC44890070FF94 /* SWChuLong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWChuLong.h; sourceTree = "<group>"; };
+		3BB08F011CFC44890070FF94 /* SWChuLong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWChuLong.m; sourceTree = "<group>"; };
+		3BB08F031CFC44930070FF94 /* SWYuRen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWYuRen.h; sourceTree = "<group>"; };
+		3BB08F041CFC44930070FF94 /* SWYuRen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWYuRen.m; sourceTree = "<group>"; };
+		3BB08F061CFC44FF0070FF94 /* 冰风雪人.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "冰风雪人.png"; sourceTree = "<group>"; };
+		3BB08F081CFC452E0070FF94 /* SWBingFengXueRen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBingFengXueRen.h; sourceTree = "<group>"; };
+		3BB08F091CFC452E0070FF94 /* SWBingFengXueRen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBingFengXueRen.m; sourceTree = "<group>"; };
+		3BB08F0B1CFC456F0070FF94 /* 石拳食人魔.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "石拳食人魔.png"; sourceTree = "<group>"; };
+		3BB08F0D1CFC45970070FF94 /* SWShiQuanShiRenMo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWShiQuanShiRenMo.h; sourceTree = "<group>"; };
+		3BB08F0E1CFC45970070FF94 /* SWShiQuanShiRenMo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWShiQuanShiRenMo.m; sourceTree = "<group>"; };
+		3BB08F101CFC46360070FF94 /* 蜘蛛坦克.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "蜘蛛坦克.png"; sourceTree = "<group>"; };
+		3BB08F121CFC464D0070FF94 /* SWZhiZhuTanKe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWZhiZhuTanKe.h; sourceTree = "<group>"; };
+		3BB08F131CFC464D0070FF94 /* SWZhiZhuTanKe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWZhiZhuTanKe.m; sourceTree = "<group>"; };
+		3BB08F5B1CFD2B8C0070FF94 /* SWDeckSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDeckSelectViewController.h; sourceTree = "<group>"; };
+		3BB08F5C1CFD2B8C0070FF94 /* SWDeckSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDeckSelectViewController.m; sourceTree = "<group>"; };
+		3BB08F5E1CFD3BEE0070FF94 /* SWHandCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHandCardCell.h; sourceTree = "<group>"; };
+		3BB08F5F1CFD3BEE0070FF94 /* SWHandCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHandCardCell.m; sourceTree = "<group>"; };
 		3BD7AFE51CF4434900D1080C /* SWHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHero.h; sourceTree = "<group>"; };
 		3BD7AFE61CF4434900D1080C /* SWHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHero.m; sourceTree = "<group>"; };
 		3BD7AFE81CF4435F00D1080C /* SWMage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMage.h; sourceTree = "<group>"; };
@@ -70,10 +103,8 @@
 		3BD7B0291CF703B900D1080C /* SWSpell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSpell.h; sourceTree = "<group>"; };
 		3BD7B02A1CF703B900D1080C /* SWSpell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSpell.m; sourceTree = "<group>"; };
 		3BD7B0301CF7046F00D1080C /* 松鼠.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "松鼠.png"; sourceTree = "<group>"; };
-		3BD7B0311CF7046F00D1080C /* 迅猛龙.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "迅猛龙.png"; sourceTree = "<group>"; };
+		3BD7B0311CF7046F00D1080C /* 血沼迅猛龙.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "血沼迅猛龙.png"; sourceTree = "<group>"; };
 		3BD7B0321CF7046F00D1080C /* 野猪.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "野猪.png"; sourceTree = "<group>"; };
-		3BD7B0391CF704C400D1080C /* SWXunMengLong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWXunMengLong.h; sourceTree = "<group>"; };
-		3BD7B03A1CF704C400D1080C /* SWXunMengLong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWXunMengLong.m; sourceTree = "<group>"; };
 		3BD7B03C1CF7095100D1080C /* SWYeZhu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWYeZhu.h; sourceTree = "<group>"; };
 		3BD7B03D1CF7095100D1080C /* SWYeZhu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWYeZhu.m; sourceTree = "<group>"; };
 		3BD7B03F1CF7095700D1080C /* SWSongShu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSongShu.h; sourceTree = "<group>"; };
@@ -215,12 +246,22 @@
 			children = (
 				3BD7B0261CF703B900D1080C /* SWMinion.h */,
 				3BD7B0271CF703B900D1080C /* SWMinion.m */,
-				3BD7B0391CF704C400D1080C /* SWXunMengLong.h */,
-				3BD7B03A1CF704C400D1080C /* SWXunMengLong.m */,
+				3BB08F001CFC44890070FF94 /* SWChuLong.h */,
+				3BB08F011CFC44890070FF94 /* SWChuLong.m */,
+				3BB08F031CFC44930070FF94 /* SWYuRen.h */,
+				3BB08F041CFC44930070FF94 /* SWYuRen.m */,
 				3BD7B03C1CF7095100D1080C /* SWYeZhu.h */,
 				3BD7B03D1CF7095100D1080C /* SWYeZhu.m */,
 				3BD7B03F1CF7095700D1080C /* SWSongShu.h */,
 				3BD7B0401CF7095700D1080C /* SWSongShu.m */,
+				3BB08EF91CFC43550070FF94 /* SWXueZhaoXunMengLong.h */,
+				3BB08EFA1CFC43550070FF94 /* SWXueZhaoXunMengLong.m */,
+				3BB08F121CFC464D0070FF94 /* SWZhiZhuTanKe.h */,
+				3BB08F131CFC464D0070FF94 /* SWZhiZhuTanKe.m */,
+				3BB08F081CFC452E0070FF94 /* SWBingFengXueRen.h */,
+				3BB08F091CFC452E0070FF94 /* SWBingFengXueRen.m */,
+				3BB08F0D1CFC45970070FF94 /* SWShiQuanShiRenMo.h */,
+				3BB08F0E1CFC45970070FF94 /* SWShiQuanShiRenMo.m */,
 			);
 			path = Minion;
 			sourceTree = "<group>";
@@ -247,9 +288,14 @@
 			isa = PBXGroup;
 			children = (
 				3BD7B0871CF7F8E400D1080C /* qq.png */,
+				3BB08EFC1CFC44670070FF94 /* 雏龙.png */,
+				3BB08EFD1CFC44670070FF94 /* 鱼人.png */,
 				3BD7B0301CF7046F00D1080C /* 松鼠.png */,
-				3BD7B0311CF7046F00D1080C /* 迅猛龙.png */,
 				3BD7B0321CF7046F00D1080C /* 野猪.png */,
+				3BD7B0311CF7046F00D1080C /* 血沼迅猛龙.png */,
+				3BB08F101CFC46360070FF94 /* 蜘蛛坦克.png */,
+				3BB08F061CFC44FF0070FF94 /* 冰风雪人.png */,
+				3BB08F0B1CFC456F0070FF94 /* 石拳食人魔.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -267,6 +313,10 @@
 			children = (
 				3BD7B0751CF7F31E00D1080C /* SWBattleViewController.h */,
 				3BD7B0761CF7F31E00D1080C /* SWBattleViewController.m */,
+				3BB08F5B1CFD2B8C0070FF94 /* SWDeckSelectViewController.h */,
+				3BB08F5C1CFD2B8C0070FF94 /* SWDeckSelectViewController.m */,
+				3BB08F5E1CFD3BEE0070FF94 /* SWHandCardCell.h */,
+				3BB08F5F1CFD3BEE0070FF94 /* SWHandCardCell.m */,
 			);
 			path = Battle;
 			sourceTree = "<group>";
@@ -363,12 +413,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BD7B0351CF7046F00D1080C /* 野猪.png in Resources */,
+				3BB08EFF1CFC44670070FF94 /* 鱼人.png in Resources */,
+				3BB08EFE1CFC44670070FF94 /* 雏龙.png in Resources */,
+				3BB08F111CFC46360070FF94 /* 蜘蛛坦克.png in Resources */,
 				3BD7B0881CF7F8E400D1080C /* qq.png in Resources */,
 				3B3AE8AE1CEB2D39007D0068 /* LaunchScreen.storyboard in Resources */,
+				3BB08F071CFC44FF0070FF94 /* 冰风雪人.png in Resources */,
+				3BB08F0C1CFC456F0070FF94 /* 石拳食人魔.png in Resources */,
 				3B3AE8AB1CEB2D39007D0068 /* Assets.xcassets in Resources */,
 				3BD7B0331CF7046F00D1080C /* 松鼠.png in Resources */,
 				3BD7B0441CF70A4300D1080C /* MinionList.plist in Resources */,
-				3BD7B0341CF7046F00D1080C /* 迅猛龙.png in Resources */,
+				3BD7B0341CF7046F00D1080C /* 血沼迅猛龙.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,14 +486,19 @@
 				3BD7B02C1CF703B900D1080C /* SWMinion.m in Sources */,
 				3BD7B0091CF6A36200D1080C /* SWWarrior.m in Sources */,
 				3BD7B07B1CF7F42E00D1080C /* SWPlayer.m in Sources */,
+				3BB08F051CFC44930070FF94 /* SWYuRen.m in Sources */,
 				3BD7B03E1CF7095100D1080C /* SWYeZhu.m in Sources */,
 				3B3AE8B71CEB2E5A007D0068 /* SWMainViewController.m in Sources */,
 				3BD7B0101CF6EF4200D1080C /* SWSelectHeroView.m in Sources */,
 				3BD7B0731CF7E85D00D1080C /* SWDeckCard.m in Sources */,
+				3BB08F141CFC464D0070FF94 /* SWZhiZhuTanKe.m in Sources */,
+				3BB08F601CFD3BEE0070FF94 /* SWHandCardCell.m in Sources */,
 				3BD7B02B1CF703B900D1080C /* SWEquip.m in Sources */,
 				3BD7B0771CF7F31E00D1080C /* SWBattleViewController.m in Sources */,
+				3BB08F0F1CFC45970070FF94 /* SWShiQuanShiRenMo.m in Sources */,
+				3BB08F021CFC44890070FF94 /* SWChuLong.m in Sources */,
 				3BD7B0411CF7095700D1080C /* SWSongShu.m in Sources */,
-				3BD7B03B1CF704C400D1080C /* SWXunMengLong.m in Sources */,
+				3BB08F5D1CFD2B8C0070FF94 /* SWDeckSelectViewController.m in Sources */,
 				3BD7B00F1CF6EF4200D1080C /* SWCollectionViewController.m in Sources */,
 				3BD7B0181CF7025800D1080C /* SWCard.m in Sources */,
 				3BD7B0861CF7F68200D1080C /* SWCurrentPlayer.m in Sources */,
@@ -446,7 +506,9 @@
 				3BD7B0151CF6EF7100D1080C /* SWDeck.m in Sources */,
 				3B3AE8A01CEB2D39007D0068 /* main.m in Sources */,
 				3BD7B02D1CF703B900D1080C /* SWSpell.m in Sources */,
+				3BB08EFB1CFC43550070FF94 /* SWXueZhaoXunMengLong.m in Sources */,
 				3BD7AFEA1CF4435F00D1080C /* SWMage.m in Sources */,
+				3BB08F0A1CFC452E0070FF94 /* SWBingFengXueRen.m in Sources */,
 				3BD7B07E1CF7F4E800D1080C /* SWEasyAI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

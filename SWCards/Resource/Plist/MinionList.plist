@@ -2,8 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>SWXunMengLong</string>
+	<string>SWYuRen</string>
+	<string>SWChuLong</string>
 	<string>SWYeZhu</string>
 	<string>SWSongShu</string>
+	<string>SWXueZhaoXunMengLong</string>
+	<string>SWZhiZhuTanKe</string>
+	<string>SWBingFengXueRen</string>
+	<string>SWShiQuanShiRenMo</string>
 </array>
 </plist>

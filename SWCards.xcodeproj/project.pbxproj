@@ -25,6 +25,8 @@
 		3BB08F141CFC464D0070FF94 /* SWZhiZhuTanKe.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F131CFC464D0070FF94 /* SWZhiZhuTanKe.m */; };
 		3BB08F5D1CFD2B8C0070FF94 /* SWDeckSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F5C1CFD2B8C0070FF94 /* SWDeckSelectViewController.m */; };
 		3BB08F601CFD3BEE0070FF94 /* SWHandCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F5F1CFD3BEE0070FF94 /* SWHandCardCell.m */; };
+		3BB08FBE1CFEB2520070FF94 /* SWManaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08FBD1CFEB2520070FF94 /* SWManaView.m */; };
+		3BB08FC11CFEC1830070FF94 /* SWTurnManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08FC01CFEC1830070FF94 /* SWTurnManager.m */; };
 		3BD7AFE71CF4434900D1080C /* SWHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFE61CF4434900D1080C /* SWHero.m */; };
 		3BD7AFEA1CF4435F00D1080C /* SWMage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFE91CF4435F00D1080C /* SWMage.m */; };
 		3BD7B0091CF6A36200D1080C /* SWWarrior.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0081CF6A36200D1080C /* SWWarrior.m */; };
@@ -82,6 +84,10 @@
 		3BB08F5C1CFD2B8C0070FF94 /* SWDeckSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDeckSelectViewController.m; sourceTree = "<group>"; };
 		3BB08F5E1CFD3BEE0070FF94 /* SWHandCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHandCardCell.h; sourceTree = "<group>"; };
 		3BB08F5F1CFD3BEE0070FF94 /* SWHandCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHandCardCell.m; sourceTree = "<group>"; };
+		3BB08FBC1CFEB2520070FF94 /* SWManaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWManaView.h; sourceTree = "<group>"; };
+		3BB08FBD1CFEB2520070FF94 /* SWManaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWManaView.m; sourceTree = "<group>"; };
+		3BB08FBF1CFEC1830070FF94 /* SWTurnManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTurnManager.h; sourceTree = "<group>"; };
+		3BB08FC01CFEC1830070FF94 /* SWTurnManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTurnManager.m; sourceTree = "<group>"; };
 		3BD7AFE51CF4434900D1080C /* SWHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHero.h; sourceTree = "<group>"; };
 		3BD7AFE61CF4434900D1080C /* SWHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHero.m; sourceTree = "<group>"; };
 		3BD7AFE81CF4435F00D1080C /* SWMage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMage.h; sourceTree = "<group>"; };
@@ -311,6 +317,10 @@
 		3BD7B0741CF7F31100D1080C /* Battle */ = {
 			isa = PBXGroup;
 			children = (
+				3BB08FBF1CFEC1830070FF94 /* SWTurnManager.h */,
+				3BB08FC01CFEC1830070FF94 /* SWTurnManager.m */,
+				3BB08FBC1CFEB2520070FF94 /* SWManaView.h */,
+				3BB08FBD1CFEB2520070FF94 /* SWManaView.m */,
 				3BD7B0751CF7F31E00D1080C /* SWBattleViewController.h */,
 				3BD7B0761CF7F31E00D1080C /* SWBattleViewController.m */,
 				3BB08F5B1CFD2B8C0070FF94 /* SWDeckSelectViewController.h */,
@@ -492,6 +502,7 @@
 				3BD7B0101CF6EF4200D1080C /* SWSelectHeroView.m in Sources */,
 				3BD7B0731CF7E85D00D1080C /* SWDeckCard.m in Sources */,
 				3BB08F141CFC464D0070FF94 /* SWZhiZhuTanKe.m in Sources */,
+				3BB08FBE1CFEB2520070FF94 /* SWManaView.m in Sources */,
 				3BB08F601CFD3BEE0070FF94 /* SWHandCardCell.m in Sources */,
 				3BD7B02B1CF703B900D1080C /* SWEquip.m in Sources */,
 				3BD7B0771CF7F31E00D1080C /* SWBattleViewController.m in Sources */,
@@ -501,6 +512,7 @@
 				3BB08F5D1CFD2B8C0070FF94 /* SWDeckSelectViewController.m in Sources */,
 				3BD7B00F1CF6EF4200D1080C /* SWCollectionViewController.m in Sources */,
 				3BD7B0181CF7025800D1080C /* SWCard.m in Sources */,
+				3BB08FC11CFEC1830070FF94 /* SWTurnManager.m in Sources */,
 				3BD7B0861CF7F68200D1080C /* SWCurrentPlayer.m in Sources */,
 				3B3AE8A31CEB2D39007D0068 /* AppDelegate.m in Sources */,
 				3BD7B0151CF6EF7100D1080C /* SWDeck.m in Sources */,

@@ -9,14 +9,17 @@
 #import "SWBattleViewController.h"
 #import <Masonry.h>
 #import <MJExtension.h>
+#import <MBProgressHUD.h>
 #import "SWCurrentPlayer.h"
 #import "SWEasyAI.h"
 #import "SWDeck.h"
 #import "SWHero.h"
 #import "SWCard.h"
 #import "SWHandCardCell.h"
+#import "SWManaView.h"
+#import "SWTurnManager.h"
 
-@interface SWBattleViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface SWBattleViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, SWTurnManagerDelegate>
 
 @property (nonatomic, strong) UICollectionView *playerCollectionView;
 @property (nonatomic, strong) UICollectionView *opponentCollectionView;
@@ -30,6 +33,14 @@
 @property (nonatomic, strong) NSMutableArray *playerBattleArray;
 @property (nonatomic, strong) NSMutableArray *opponentBattleArray;
 
+@property (nonatomic, strong) SWManaView *playerManaView;
+@property (nonatomic, strong) SWManaView *opponentManaView;
+
+@property (nonatomic, strong) UILabel *playerCardsLeftLabel;
+@property (nonatomic, strong) UILabel *opponentCardsLeftLabel;
+
+@property (nonatomic, strong) SWTurnManager *turnManager;
+
 @end
 
 @implementation SWBattleViewController
@@ -42,6 +53,9 @@
         _opponentHands = [NSMutableArray array];
         _playerBattleArray = [NSMutableArray array];
         _opponentBattleArray = [NSMutableArray array];
+        
+        _turnManager = [[SWTurnManager alloc] init];
+        _turnManager.delegate = self;
     }
     return self;
 }
@@ -55,7 +69,12 @@
 
 #pragma mark --- Private Method
 
+- (void)endTurn {
+    [_turnManager endTurn];
+}
+
 - (void)getOpeningHand {
+    _opponentCollectionView.userInteractionEnabled = NO;
     __weak typeof(self) weakself = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [weakself bothDrawCards];
@@ -63,6 +82,10 @@
             [weakself bothDrawCards];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakself bothDrawCards];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [weakself.turnManager startRandomly];
+                    weakself.opponentCollectionView.userInteractionEnabled = YES;
+                });
             });
         });
     });
@@ -76,12 +99,14 @@
 - (void)opponentDrawCard {
     [_opponentHands addObject:[_opponentDeck drawCard]];
     [_opponentCollectionView reloadData];
+    _opponentCardsLeftLabel.text = [NSString stringWithFormat:@"剩余: %zd张", _opponentDeck.cardsArray.count];
 }
 
 - (void)playerDrawCard {
     [_playerHands addObject:[_playerDeck drawCard]];
     NSLog(@"%@", _playerDeck);
     [_playerCollectionView reloadData];
+    _playerCardsLeftLabel.text = [NSString stringWithFormat:@"剩余: %zd张", _playerDeck.cardsArray.count];
 }
 
 - (void)setupUI {
@@ -89,6 +114,19 @@
     
     [self setupPlayerArea];
     [self setupOpponentArea];
+    [self setupEndTurnButton];
+}
+
+- (void)setupEndTurnButton {
+    UIButton *endTurnButton = [[UIButton alloc] initWithFrame:CGRectZero];
+    endTurnButton.backgroundColor = [UIColor redColor];
+    [endTurnButton addTarget:self action:@selector(endTurn) forControlEvents:UIControlEventTouchUpInside];
+    [endTurnButton setTitle:@"End Turn" forState:UIControlStateNormal];
+    [self.view addSubview:endTurnButton];
+    [endTurnButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(50);
+        make.right.mas_equalTo(-50);
+    }];
 }
 
 - (void)setupPlayerArea {
@@ -121,8 +159,8 @@
     _playerCollectionView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:_playerCollectionView];
     [_playerCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.bottom.mas_equalTo(0);
-        make.left.equalTo(playerView.mas_right);
+        make.left.bottom.mas_equalTo(0);
+        make.right.equalTo(playerView.mas_left);
         make.height.mas_equalTo(100);
     }];
     [_playerCollectionView registerClass:[SWHandCardCell class] forCellWithReuseIdentifier:@"playerCell"];
@@ -143,6 +181,18 @@
         make.bottom.equalTo(_playerCollectionView.mas_top);
     }];
     [_playerBattleGround registerClass:[SWHandCardCell class] forCellWithReuseIdentifier:@"playerBattleGroundCell"];
+    
+    _playerManaView = [[SWManaView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 2 + 25, [UIScreen mainScreen].bounds.size.height - 25, [UIScreen mainScreen].bounds.size.width / 2 - 25, 25) andManaCount:0];
+    [self.view addSubview:_playerManaView];
+    
+    
+    _playerCardsLeftLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    _playerCardsLeftLabel.text = [NSString stringWithFormat:@"剩余: %zd张", _playerDeck.cardsArray.count];
+    [self.view addSubview:_playerCardsLeftLabel];
+    [_playerCardsLeftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(0);
+        make.top.equalTo(self.view.mas_centerY);
+    }];
 }
 
 - (void)setupOpponentArea {
@@ -197,7 +247,21 @@
         make.top.equalTo(_opponentCollectionView.mas_bottom);
     }];
     [_opponentBattleGround registerClass:[SWHandCardCell class] forCellWithReuseIdentifier:@"opponentBattleGroundCell"];
+    
+    _opponentManaView = [[SWManaView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 2 + 25, 0, [UIScreen mainScreen].bounds.size.width / 2 - 25, 25) andManaCount:0];
+    [self.view addSubview:_opponentManaView];
+
+    
+    _opponentCardsLeftLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    _opponentCardsLeftLabel.text = [NSString stringWithFormat:@"剩余: %zd张", _opponentDeck.cardsArray.count];
+    [self.view addSubview:_opponentCardsLeftLabel];
+    [_opponentCardsLeftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(0);
+        make.bottom.equalTo(self.view.mas_centerY);
+    }];
 }
+
+
 
 #pragma mark --- UICollectionViewDelegate / DataSource
 
@@ -243,20 +307,43 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (collectionView == _playerCollectionView) {
+    if (collectionView == _playerCollectionView && _turnManager.isMyTurn) {
+        
         SWCard *card = _playerHands[indexPath.item];
         SWCard *tempCard = [card copy];
-        [_playerHands removeObjectAtIndex:indexPath.item];
-        [_playerBattleArray addObject:tempCard];
-        [_playerCollectionView reloadData];
-        [_playerBattleGround reloadData];
-    } else if (collectionView == _opponentCollectionView) {
+        if (tempCard.manaCost <= _playerManaView.manaLeft) {
+            [_playerManaView costMana:tempCard.manaCost];
+            [_playerHands removeObjectAtIndex:indexPath.item];
+            [_playerBattleArray addObject:tempCard];
+            [_playerCollectionView reloadData];
+            [_playerBattleGround reloadData];
+        } else {
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.detailsLabelText = @"魔法不足";
+            hud.margin = 10.f;
+            hud.removeFromSuperViewOnHide = YES;
+            [hud hide:YES afterDelay:2.0];
+        }
+        
+    } else if (collectionView == _opponentCollectionView && !_turnManager.isMyTurn) {
         SWCard *card = _opponentHands[indexPath.item];
         SWCard *tempCard = [card copy];
-        [_opponentHands removeObjectAtIndex:indexPath.item];
-        [_opponentBattleArray addObject:tempCard];
-        [_opponentCollectionView reloadData];
-        [_opponentBattleGround reloadData];
+        if (tempCard.manaCost <= _opponentManaView.manaLeft) {
+            [_opponentManaView costMana:tempCard.manaCost];
+            [_opponentHands removeObjectAtIndex:indexPath.item];
+            [_opponentBattleArray addObject:tempCard];
+            [_opponentCollectionView reloadData];
+            [_opponentBattleGround reloadData];
+        } else {
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.detailsLabelText = @"魔法不足";
+            hud.margin = 10.f;
+            hud.removeFromSuperViewOnHide = YES;
+            [hud hide:YES afterDelay:2.0];
+        }
+        
     } else if (collectionView == _playerBattleGround) {
         
     } else {
@@ -264,5 +351,16 @@
     }
 }
 
+#pragma mark --- SWTurnManagerDelegate
+
+- (void)didChangeTurn:(SWTurnManager *)manager {
+    if (manager.isMyTurn) {
+        [_playerManaView increaseManaTo:manager.currentTurn];
+        [self playerDrawCard];
+    } else {
+        [_opponentManaView increaseManaTo:manager.currentTurn];
+        [self opponentDrawCard];
+    }
+}
 
 @end

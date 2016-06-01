@@ -29,6 +29,7 @@ static NSString *const poolCellId = @"poolCellId";
 @property (nonatomic, strong) NSArray *pool;
 @property (nonatomic, strong) NSMutableArray *deckCardsArray;
 
+
 @end
 
 @implementation SWCollectionViewController
@@ -66,9 +67,13 @@ static NSString *const poolCellId = @"poolCellId";
     _poolCollectionView.backgroundColor = [UIColor greenColor];
     _poolCollectionView.delegate = self;
     _poolCollectionView.dataSource = self;
-    
     [self.view addSubview:_poolCollectionView];
     [_poolCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:poolCellId];
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    backButton.backgroundColor = [UIColor redColor];
+    [backButton addTarget:self action:@selector(backMethod) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backButton];
 }
 
 #pragma mark --- UITableViewDelegate / DataSource
@@ -208,6 +213,10 @@ static NSString *const poolCellId = @"poolCellId";
         make.top.right.bottom.mas_equalTo(0);
         make.width.mas_equalTo([UIScreen mainScreen].bounds.size.width / 5);
     }];
+}
+
+- (void)backMethod {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark --- UICollectionViewDelegate / DataSource

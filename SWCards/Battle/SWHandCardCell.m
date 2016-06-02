@@ -28,6 +28,7 @@
         
         _defenseLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _defenseLabel.backgroundColor = [UIColor purpleColor];
+        _defenseLabel.textAlignment = NSTextAlignmentCenter;
         [_iconView addSubview:_defenseLabel];
         [_defenseLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.right.mas_equalTo(0);

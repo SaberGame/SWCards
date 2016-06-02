@@ -7,6 +7,9 @@
 //
 
 #import "SWDrawLineView.h"
+#import <math.h>
+
+#define kArrowLength 30
 
 @interface SWDrawLineView()
 
@@ -42,6 +45,35 @@
     [path setLineWidth:5];
     [path stroke];
     
+    UIBezierPath *path2 = [UIBezierPath bezierPath];
+    [path2 moveToPoint:_endPoint];
+    [path2 addLineToPoint:[self leftPoinWithStartPoint:_startPoint andEndPoint:_endPoint]];
+    [[UIColor greenColor]set];
+    [path2 setLineWidth:5];
+    [path2 stroke];
+    
+    UIBezierPath *path3 = [UIBezierPath bezierPath];
+    [path3 moveToPoint:_endPoint];
+    [path3 addLineToPoint:[self rightPoinWithStartPoint:_startPoint andEndPoint:_endPoint]];
+    [[UIColor greenColor]set];
+    [path3 setLineWidth:5];
+    [path3 stroke];
+}
+
+- (CGPoint)leftPoinWithStartPoint:(CGPoint)startPoint andEndPoint:(CGPoint)endPoint {
+    
+    CGFloat x = endPoint.x - startPoint.x;
+    CGFloat y = endPoint.y - startPoint.y;
+    double angle = atan(y / x) - atan(1.0);
+    return CGPointMake(endPoint.x - cos(angle) * kArrowLength, endPoint.y - sin(angle) * kArrowLength);
+}
+
+- (CGPoint)rightPoinWithStartPoint:(CGPoint)startPoint andEndPoint:(CGPoint)endPoint {
+    
+    CGFloat x = endPoint.x - startPoint.x;
+    CGFloat y = endPoint.y - startPoint.y;
+    double angle = atan(y / x) - atan(1.0);
+    return CGPointMake(endPoint.x + sin(angle) * kArrowLength, endPoint.y - cos(angle) * kArrowLength);
 }
 
 

@@ -8,6 +8,9 @@
 
 #import "SWManaView.h"
 #import <Masonry.h>
+#import "SWGameManager.h"
+
+#define kMostMana [SWGameManager maximumMana]
 
 @interface SWManaView()
 
@@ -54,8 +57,8 @@
             make.centerX.equalTo(leftView.mas_centerX).multipliedBy(1.5);
         }];
         
-        CGFloat w = (frame.size.width - 50) / 10;
-        for (int i = 0; i < 10; i++) {
+        CGFloat w = (frame.size.width - 50) / kMostMana;
+        for (int i = 0; i < kMostMana; i++) {
             UIView *manaView = [[UIView alloc] initWithFrame:CGRectMake(50 +i * w, 0, w, frame.size.height)];
             manaView.layer.borderWidth = 2;
             manaView.tag = i + 1;
@@ -90,12 +93,15 @@
 }
 
 - (void)increaseManaTo:(NSInteger)count {
+    
+    count = count > kMostMana ? kMostMana : count;
+    
     _manaLeft = count;
     _totalManaCount = count;
     _manaLeftLabel.text = [NSString stringWithFormat:@"%zd", _manaLeft];
     _totalManaLabel.text = [NSString stringWithFormat:@"%zd", _totalManaCount];
     
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < kMostMana; i++) {
         
         if (i > count - 1) {
             [self viewWithTag:i + 1].hidden = YES;

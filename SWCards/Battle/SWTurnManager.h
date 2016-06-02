@@ -20,12 +20,11 @@
 @interface SWTurnManager : NSObject
 
 @property (nonatomic, weak) id<SWTurnManagerDelegate>delegate;
-
 @property (nonatomic, assign) BOOL isMyTurn;
-
 @property (nonatomic, assign) NSInteger currentTurn;
 
 - (void)startRandomly;
 - (void)endTurn;
+- (void)invalidate;
 
 @end

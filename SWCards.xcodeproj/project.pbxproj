@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B204B321D00091F00B9FA03 /* SWGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B204B311D00091F00B9FA03 /* SWGameManager.m */; };
 		3B3AE8A01CEB2D39007D0068 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3AE89F1CEB2D39007D0068 /* main.m */; };
 		3B3AE8A31CEB2D39007D0068 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3AE8A21CEB2D39007D0068 /* AppDelegate.m */; };
 		3B3AE8AB1CEB2D39007D0068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3AE8AA1CEB2D39007D0068 /* Assets.xcassets */; };
@@ -55,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		1403300E98A7B7459DD35D97 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B204B301D00091F00B9FA03 /* SWGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGameManager.h; sourceTree = "<group>"; };
+		3B204B311D00091F00B9FA03 /* SWGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGameManager.m; sourceTree = "<group>"; };
 		3B3AE89B1CEB2D39007D0068 /* SWCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3AE89F1CEB2D39007D0068 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B3AE8A11CEB2D39007D0068 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				3B3AE8A21CEB2D39007D0068 /* AppDelegate.m */,
 				3B3AE8B51CEB2E5A007D0068 /* SWMainViewController.h */,
 				3B3AE8B61CEB2E5A007D0068 /* SWMainViewController.m */,
+				3B204B301D00091F00B9FA03 /* SWGameManager.h */,
+				3B204B311D00091F00B9FA03 /* SWGameManager.m */,
 				3BD7B0111CF6EF7100D1080C /* Card */,
 				3BD7B0121CF6EF7100D1080C /* Deck */,
 				3BD7AFE41CF4434900D1080C /* Hero */,
@@ -506,6 +511,7 @@
 				3B3AE8B71CEB2E5A007D0068 /* SWMainViewController.m in Sources */,
 				3BD7B0101CF6EF4200D1080C /* SWSelectHeroView.m in Sources */,
 				3BD7B0731CF7E85D00D1080C /* SWDeckCard.m in Sources */,
+				3B204B321D00091F00B9FA03 /* SWGameManager.m in Sources */,
 				3BB08F141CFC464D0070FF94 /* SWZhiZhuTanKe.m in Sources */,
 				3BB08FBE1CFEB2520070FF94 /* SWManaView.m in Sources */,
 				3BB08F601CFD3BEE0070FF94 /* SWHandCardCell.m in Sources */,

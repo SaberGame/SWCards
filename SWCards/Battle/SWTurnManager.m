@@ -9,8 +9,10 @@
 #import "SWTurnManager.h"
 #import <UIKit/UIKit.h>
 #import <Masonry.h>
+#import "SWGameManager.h"
 
-#define kTurnSeconds 20
+#define kTurnSeconds [SWGameManager turnSeconds]
+#define kCountDownTime [SWGameManager countDownTime]
 
 @interface SWTurnManager()
 
@@ -40,7 +42,7 @@
 - (void)timeIncrease {
     _count++;
     
-    if (_count == kTurnSeconds - 10) {
+    if (_count == kTurnSeconds - kCountDownTime) {
         [self countDown];
     }
     
@@ -98,6 +100,11 @@
     }];
 }
 
+- (void)invalidate {
+    [_timer invalidate];
+    _timer = nil;
+}
+
 - (void)countDown {
     _countDownLabel = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 4, [UIScreen mainScreen].bounds.size.height / 4, [UIScreen mainScreen].bounds.size.width  / 2, [UIScreen mainScreen].bounds.size.height / 2)];
     _countDownLabel.backgroundColor = [UIColor clearColor];
@@ -106,7 +113,6 @@
     _countDownLabel.font = [UIFont systemFontOfSize:40];
     _countDownLabel.userInteractionEnabled = NO;
     [[[[UIApplication sharedApplication] delegate] window] addSubview:_countDownLabel];
-    
 }
 
 @end

@@ -36,4 +36,25 @@
     return card;
 }
 
+- (FightResult)fightWithCard:(SWCard *)card {
+    if (self.attack < card.defense && self.defense > card.attack) {
+        [self fight:card];
+        return Draw;
+    } else if (self.attack >= card.defense && card.attack < self.defense) {
+        [self fight:card];
+        return Win;
+    } else if (self.attack < card.defense && card.attack >= self.defense) {
+        [self fight:card];
+        return Lose;
+    } else {
+        [self fight:card];
+        return BothDie;
+    }
+}
+
+- (void)fight:(SWCard *)card {
+    self.defense -= card.attack;
+    card.defense -= self.attack;
+}
+
 @end

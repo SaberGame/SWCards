@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) SWCard *card;
 
+@property (nonatomic, assign) BOOL isSelected;
+
 @end

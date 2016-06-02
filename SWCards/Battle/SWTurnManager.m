@@ -70,10 +70,10 @@
     [[[[UIApplication sharedApplication] delegate] window] addSubview:turnLabel];
     
     turnLabel.alpha = 0;
-    [UIView animateWithDuration:3 animations:^{
+    [UIView animateWithDuration:1 animations:^{
         turnLabel.alpha = 1;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:3 animations:^{
+        [UIView animateWithDuration:1 animations:^{
             turnLabel.alpha = 0;
         } completion:^(BOOL finished) {
             [turnLabel removeFromSuperview];

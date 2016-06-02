@@ -27,6 +27,7 @@
 		3BB08F601CFD3BEE0070FF94 /* SWHandCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08F5F1CFD3BEE0070FF94 /* SWHandCardCell.m */; };
 		3BB08FBE1CFEB2520070FF94 /* SWManaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08FBD1CFEB2520070FF94 /* SWManaView.m */; };
 		3BB08FC11CFEC1830070FF94 /* SWTurnManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08FC01CFEC1830070FF94 /* SWTurnManager.m */; };
+		3BB08FCA1CFEE8610070FF94 /* SWDrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB08FC91CFEE8610070FF94 /* SWDrawLineView.m */; };
 		3BD7AFE71CF4434900D1080C /* SWHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFE61CF4434900D1080C /* SWHero.m */; };
 		3BD7AFEA1CF4435F00D1080C /* SWMage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7AFE91CF4435F00D1080C /* SWMage.m */; };
 		3BD7B0091CF6A36200D1080C /* SWWarrior.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B0081CF6A36200D1080C /* SWWarrior.m */; };
@@ -88,6 +89,8 @@
 		3BB08FBD1CFEB2520070FF94 /* SWManaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWManaView.m; sourceTree = "<group>"; };
 		3BB08FBF1CFEC1830070FF94 /* SWTurnManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTurnManager.h; sourceTree = "<group>"; };
 		3BB08FC01CFEC1830070FF94 /* SWTurnManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTurnManager.m; sourceTree = "<group>"; };
+		3BB08FC81CFEE8610070FF94 /* SWDrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDrawLineView.h; sourceTree = "<group>"; };
+		3BB08FC91CFEE8610070FF94 /* SWDrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDrawLineView.m; sourceTree = "<group>"; };
 		3BD7AFE51CF4434900D1080C /* SWHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHero.h; sourceTree = "<group>"; };
 		3BD7AFE61CF4434900D1080C /* SWHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHero.m; sourceTree = "<group>"; };
 		3BD7AFE81CF4435F00D1080C /* SWMage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMage.h; sourceTree = "<group>"; };
@@ -317,6 +320,8 @@
 		3BD7B0741CF7F31100D1080C /* Battle */ = {
 			isa = PBXGroup;
 			children = (
+				3BB08FC81CFEE8610070FF94 /* SWDrawLineView.h */,
+				3BB08FC91CFEE8610070FF94 /* SWDrawLineView.m */,
 				3BB08FBF1CFEC1830070FF94 /* SWTurnManager.h */,
 				3BB08FC01CFEC1830070FF94 /* SWTurnManager.m */,
 				3BB08FBC1CFEB2520070FF94 /* SWManaView.h */,
@@ -510,6 +515,7 @@
 				3BB08F021CFC44890070FF94 /* SWChuLong.m in Sources */,
 				3BD7B0411CF7095700D1080C /* SWSongShu.m in Sources */,
 				3BB08F5D1CFD2B8C0070FF94 /* SWDeckSelectViewController.m in Sources */,
+				3BB08FCA1CFEE8610070FF94 /* SWDrawLineView.m in Sources */,
 				3BD7B00F1CF6EF4200D1080C /* SWCollectionViewController.m in Sources */,
 				3BD7B0181CF7025800D1080C /* SWCard.m in Sources */,
 				3BB08FC11CFEC1830070FF94 /* SWTurnManager.m in Sources */,

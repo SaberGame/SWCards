@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    Win,
+    Lose,
+    Draw,
+    BothDie
+}FightResult;
+
 @interface SWCard : NSObject<NSCopying>
 
 @property (nonatomic, copy) NSString *cardName;
@@ -21,5 +28,7 @@
 @property (nonatomic, copy) NSString *minionType;
 
 + (NSArray *)allCards;
+
+- (FightResult)fightWithCard:(SWCard *)card;
 
 @end

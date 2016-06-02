@@ -18,6 +18,7 @@
 #import "SWHandCardCell.h"
 #import "SWManaView.h"
 #import "SWTurnManager.h"
+#import "SWDrawLineView.h"
 
 @interface SWBattleViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, SWTurnManagerDelegate>
 
@@ -40,6 +41,18 @@
 @property (nonatomic, strong) UILabel *opponentCardsLeftLabel;
 
 @property (nonatomic, strong) SWTurnManager *turnManager;
+
+@property (nonatomic, assign) CGPoint startPoint;
+@property (nonatomic, assign) CGPoint endPoint;
+
+@property (nonatomic, assign) BOOL playerAttack;
+@property (nonatomic, assign) BOOL opponentAttack;
+
+@property (nonatomic, strong) SWCard *attackCard;
+@property (nonatomic, strong) SWCard *defenseCard;
+
+@property (nonatomic, assign) NSInteger attackIndex;
+@property (nonatomic, assign) NSInteger defenseIndex;
 
 @end
 
@@ -69,11 +82,19 @@
 
 #pragma mark --- Private Method
 
+- (void)setupUI {
+    self.view.backgroundColor = [UIColor grayColor];
+    [self setupPlayerArea];
+    [self setupOpponentArea];
+    [self setupEndTurnButton];
+}
+
 - (void)endTurn {
     [_turnManager endTurn];
 }
 
 - (void)getOpeningHand {
+    
     _opponentCollectionView.userInteractionEnabled = NO;
     __weak typeof(self) weakself = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -104,17 +125,8 @@
 
 - (void)playerDrawCard {
     [_playerHands addObject:[_playerDeck drawCard]];
-    NSLog(@"%@", _playerDeck);
     [_playerCollectionView reloadData];
     _playerCardsLeftLabel.text = [NSString stringWithFormat:@"剩余: %zd张", _playerDeck.cardsArray.count];
-}
-
-- (void)setupUI {
-    self.view.backgroundColor = [UIColor grayColor];
-    
-    [self setupPlayerArea];
-    [self setupOpponentArea];
-    [self setupEndTurnButton];
 }
 
 - (void)setupEndTurnButton {
@@ -261,7 +273,100 @@
     }];
 }
 
+- (void)reloadBattleGround {
+    [_playerBattleGround reloadData];
+    [_opponentBattleGround reloadData];
+}
 
+- (void)fight {
+    if (_playerAttack) {
+       FightResult result = [_attackCard fightWithCard:_defenseCard];
+        switch (result) {
+            case Win:
+            {
+                [_opponentBattleArray removeObjectAtIndex:_defenseIndex];
+                [self reloadBattleGround];
+            }
+                break;
+                
+            case Lose:
+            {
+                [_playerBattleArray removeObjectAtIndex:_attackIndex];
+                [self reloadBattleGround];
+            }
+                break;
+                
+            case Draw:
+            {
+                [self reloadBattleGround];
+            }
+                break;
+                
+            case BothDie:
+            {
+                [_opponentBattleArray removeObjectAtIndex:_defenseIndex];
+                [_playerBattleArray removeObjectAtIndex:_attackIndex];
+                [self reloadBattleGround];
+            }
+                break;
+        }
+    }
+    
+    if (_opponentAttack) {
+        FightResult result = [_defenseCard fightWithCard:_attackCard];
+        switch (result) {
+            case Win:
+            {
+                [_playerBattleArray removeObjectAtIndex:_defenseIndex];
+                [self reloadBattleGround];
+            }
+                break;
+                
+            case Lose:
+            {
+                [_opponentBattleArray removeObjectAtIndex:_attackIndex];
+                [self reloadBattleGround];
+            }
+                break;
+                
+            case Draw:
+            {
+                [self reloadBattleGround];
+            }
+                break;
+                
+            case BothDie:
+            {
+                [_playerBattleArray removeObjectAtIndex:_defenseIndex];
+                [_opponentBattleArray removeObjectAtIndex:_attackIndex];
+                [self reloadBattleGround];
+            }
+                break;
+        }
+    }
+}
+
+- (void)showNoManaMessage {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.detailsLabelText = @"魔法不足";
+    hud.margin = 10.f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:2.0];
+}
+
+- (void)resetFightStatus {
+    _attackCard = nil;
+    _defenseCard = nil;
+    _opponentAttack = NO;
+    _playerAttack = NO;
+    for (SWHandCardCell *cell in [_playerBattleGround visibleCells]) {
+        cell.isSelected = NO;
+    }
+    for (SWHandCardCell *cell in [_opponentBattleGround visibleCells]) {
+        cell.isSelected = NO;
+    }
+}
 
 #pragma mark --- UICollectionViewDelegate / DataSource
 
@@ -289,7 +394,7 @@
         SWCard *card = _opponentHands[indexPath.item];
         cell.contentView.backgroundColor = [UIColor orangeColor];
         cell.card = card;
-        return cell;
+        return cell; 
     } else if (collectionView == _playerBattleGround) {
         SWHandCardCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"playerBattleGroundCell" forIndexPath:indexPath];
         SWCard *card = _playerBattleArray[indexPath.item];
@@ -318,12 +423,7 @@
             [_playerCollectionView reloadData];
             [_playerBattleGround reloadData];
         } else {
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
-            hud.mode = MBProgressHUDModeText;
-            hud.detailsLabelText = @"魔法不足";
-            hud.margin = 10.f;
-            hud.removeFromSuperViewOnHide = YES;
-            [hud hide:YES afterDelay:2.0];
+            [self showNoManaMessage];
         }
         
     } else if (collectionView == _opponentCollectionView && !_turnManager.isMyTurn) {
@@ -336,24 +436,61 @@
             [_opponentCollectionView reloadData];
             [_opponentBattleGround reloadData];
         } else {
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
-            hud.mode = MBProgressHUDModeText;
-            hud.detailsLabelText = @"魔法不足";
-            hud.margin = 10.f;
-            hud.removeFromSuperViewOnHide = YES;
-            [hud hide:YES afterDelay:2.0];
+            [self showNoManaMessage];
         }
+    }
+    else if (collectionView == _playerBattleGround && (_turnManager.isMyTurn || _opponentAttack)) {
         
-    } else if (collectionView == _playerBattleGround) {
-        
-    } else {
-        
+        if (_opponentAttack) {
+            CGFloat height = [UIScreen mainScreen].bounds.size.height / 2 - 100;
+            _endPoint = CGPointMake((indexPath.item + 1) * 110 - 60, [UIScreen mainScreen].bounds.size.height / 2 + height / 2);
+            SWDrawLineView *drawLineView = [[SWDrawLineView alloc] initWithFrame:[UIScreen mainScreen].bounds startPoint:_startPoint endPoint:_endPoint];
+            [self.view addSubview:drawLineView];
+            [drawLineView drawLine];
+            _defenseCard = _playerBattleArray[indexPath.item];
+            _defenseIndex = indexPath.item;
+            [self fight];
+            [self resetFightStatus];
+        } else {
+            SWHandCardCell *cell = (SWHandCardCell *)[_playerBattleGround cellForItemAtIndexPath:indexPath];
+            cell.isSelected = !cell.isSelected;
+            CGFloat height = [UIScreen mainScreen].bounds.size.height / 2 - 100;
+            _startPoint = CGPointMake((indexPath.item + 1) * 110 - 60, [UIScreen mainScreen].bounds.size.height / 2 + height / 2);
+            _playerAttack = cell.isSelected;
+            _attackCard = _playerAttack ? _playerBattleArray[indexPath.item] : nil;
+            _attackIndex = indexPath.item;
+        }
+    } else if (collectionView == _opponentBattleGround && (!_turnManager.isMyTurn || _playerAttack)){
+        if (_playerAttack) {
+            CGFloat height = [UIScreen mainScreen].bounds.size.height / 2 - 100;
+            _endPoint = CGPointMake((indexPath.item + 1) * 110 - 60, 100 + height / 2);
+            SWDrawLineView *drawLineView = [[SWDrawLineView alloc] initWithFrame:[UIScreen mainScreen].bounds startPoint:_startPoint endPoint:_endPoint];
+            [self.view addSubview:drawLineView];
+            [drawLineView drawLine];
+            _defenseCard = _opponentBattleArray[indexPath.item];
+            _defenseIndex = indexPath.item;
+            [self fight];
+            [self resetFightStatus];
+        } else {
+            SWHandCardCell *cell = (SWHandCardCell *)[_opponentBattleGround cellForItemAtIndexPath:indexPath];
+            cell.isSelected = !cell.isSelected;
+            CGFloat height = [UIScreen mainScreen].bounds.size.height / 2 - 100;
+            _startPoint = CGPointMake((indexPath.item + 1) * 110 - 60, 100 + height / 2);
+            _opponentAttack = cell.isSelected;
+            _attackCard = _opponentAttack ? _opponentBattleArray[indexPath.item] : nil;
+            _attackIndex = indexPath.item;
+        }
     }
 }
+
+
 
 #pragma mark --- SWTurnManagerDelegate
 
 - (void)didChangeTurn:(SWTurnManager *)manager {
+    
+    [self resetFightStatus];
+    
     if (manager.isMyTurn) {
         [_playerManaView increaseManaTo:manager.currentTurn];
         [self playerDrawCard];

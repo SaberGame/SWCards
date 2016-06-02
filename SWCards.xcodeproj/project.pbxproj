@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B204B321D00091F00B9FA03 /* SWGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B204B311D00091F00B9FA03 /* SWGameManager.m */; };
+		3B204B341D00105000B9FA03 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B204B331D00105000B9FA03 /* background.jpg */; };
 		3B3AE8A01CEB2D39007D0068 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3AE89F1CEB2D39007D0068 /* main.m */; };
 		3B3AE8A31CEB2D39007D0068 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3AE8A21CEB2D39007D0068 /* AppDelegate.m */; };
 		3B3AE8AB1CEB2D39007D0068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3AE8AA1CEB2D39007D0068 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		1403300E98A7B7459DD35D97 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B204B301D00091F00B9FA03 /* SWGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGameManager.h; sourceTree = "<group>"; };
 		3B204B311D00091F00B9FA03 /* SWGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGameManager.m; sourceTree = "<group>"; };
+		3B204B331D00105000B9FA03 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		3B3AE89B1CEB2D39007D0068 /* SWCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3AE89F1CEB2D39007D0068 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B3AE8A11CEB2D39007D0068 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		3BD7B02F1CF7046F00D1080C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3B204B331D00105000B9FA03 /* background.jpg */,
 				3BD7B0871CF7F8E400D1080C /* qq.png */,
 				3BB08EFC1CFC44670070FF94 /* 雏龙.png */,
 				3BB08EFD1CFC44670070FF94 /* 鱼人.png */,
@@ -433,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BD7B0351CF7046F00D1080C /* 野猪.png in Resources */,
+				3B204B341D00105000B9FA03 /* background.jpg in Resources */,
 				3BB08EFF1CFC44670070FF94 /* 鱼人.png in Resources */,
 				3BB08EFE1CFC44670070FF94 /* 雏龙.png in Resources */,
 				3BB08F111CFC46360070FF94 /* 蜘蛛坦克.png in Resources */,

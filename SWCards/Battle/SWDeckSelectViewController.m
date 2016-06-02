@@ -37,7 +37,7 @@
 }
 
 - (void)setupUI {
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     UIView *tempView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:tempView];
     [tempView mas_makeConstraints:^(MASConstraintMaker *make) {

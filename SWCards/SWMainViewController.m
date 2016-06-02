@@ -25,50 +25,59 @@
 }
 
 - (void)setupUI {
+    UIImage *image = [UIImage imageNamed:@"background.jpg"];
+    UIImageView *iconView = [[UIImageView alloc] initWithImage:image];
+    iconView.frame = [UIScreen mainScreen].bounds;
+    [self.view addSubview:iconView];
     
     UIButton *collectionButton = [[UIButton alloc] initWithFrame:CGRectZero];
-    [collectionButton setTitle:@"My Collection" forState:UIControlStateNormal];
-    [collectionButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    collectionButton.backgroundColor = [UIColor clearColor];
     [collectionButton addTarget:self action:@selector(clickCollectionButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:collectionButton];
     [collectionButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.bottom.mas_equalTo(-10);
+        make.bottom.right.mas_equalTo(0);
+        make.height.equalTo(self.view.mas_height).multipliedBy(0.16);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.35);
     }];
     
     UIButton *boosterPackButton = [[UIButton alloc] initWithFrame:CGRectZero];
-    [boosterPackButton setTitle:@"Booster Pack" forState:UIControlStateNormal];
-    [boosterPackButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    boosterPackButton.backgroundColor = [UIColor clearColor];
     [self.view addSubview:boosterPackButton];
     [boosterPackButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(-10);
+        make.right.mas_equalTo(0);
         make.bottom.equalTo(collectionButton.mas_top).offset(-10);
+        make.height.equalTo(collectionButton.mas_height);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.3);
     }];
     
     UIButton *shopButton = [[UIButton alloc] initWithFrame:CGRectZero];
-    [shopButton setTitle:@"Shop" forState:UIControlStateNormal];
-    [shopButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    shopButton.backgroundColor = [UIColor clearColor];
     [self.view addSubview:shopButton];
     [shopButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(-10);
-        make.left.mas_equalTo(10);
+        make.left.bottom.mas_equalTo(0);
+        make.height.equalTo(self.view.mas_height).multipliedBy(0.16);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.35);
     }];
     
     UIButton *questButton = [[UIButton alloc] initWithFrame:CGRectZero];
-    [questButton setTitle:@"Quest" forState:UIControlStateNormal];
-    [questButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    questButton.backgroundColor = [UIColor clearColor];
     [self.view addSubview:questButton];
     [questButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(10);
+        make.height.equalTo(collectionButton.mas_height);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.3);
+        make.left.mas_equalTo(0);
         make.bottom.equalTo(shopButton.mas_top).offset(-10);
     }];
     
     UIButton *battleButton = [[UIButton alloc] initWithFrame:CGRectZero];
-    [battleButton setTitle:@"Battle" forState:UIControlStateNormal];
-    [battleButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    battleButton.backgroundColor = [UIColor clearColor];
     [battleButton addTarget:self action:@selector(clickBattle) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:battleButton];
     [battleButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(0);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.3);
+        make.height.equalTo(self.view.mas_height).multipliedBy(0.14);
+        make.centerX.mas_equalTo(0);
+        make.top.mas_equalTo([UIScreen mainScreen].bounds.size.height * 0.26);
     }];
 }
 

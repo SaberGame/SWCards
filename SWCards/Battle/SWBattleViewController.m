@@ -279,6 +279,11 @@
 }
 
 - (void)fight {
+    
+    if (!_attackCard || !_defenseCard ) {
+        return;
+    }
+    
     if (_playerAttack) {
        FightResult result = [_attackCard fightWithCard:_defenseCard];
         switch (result) {
@@ -313,7 +318,7 @@
     }
     
     if (_opponentAttack) {
-        FightResult result = [_defenseCard fightWithCard:_attackCard];
+        FightResult result = [_attackCard fightWithCard:_defenseCard];
         switch (result) {
             case Win:
             {

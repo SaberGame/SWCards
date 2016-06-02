@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <Masonry.h>
 
-#define kTurnSeconds 10
+#define kTurnSeconds 20
 
 @interface SWTurnManager()
 
@@ -19,6 +19,8 @@
 @property (nonatomic, assign) NSInteger count;
 
 @property (nonatomic, assign) NSInteger changeTurnCount;
+
+@property (nonatomic, strong) UILabel *countDownLabel;
 
 @end
 
@@ -37,12 +39,27 @@
 
 - (void)timeIncrease {
     _count++;
+    
+    if (_count == kTurnSeconds - 10) {
+        [self countDown];
+    }
+    
+    if (_countDownLabel) {
+        _countDownLabel.text = [NSString stringWithFormat:@"%zd", kTurnSeconds - _count];
+    }
+    
+    
     if (_count == kTurnSeconds) {
         [self endTurn];
     }
 }
 
 - (void)endTurn {
+    
+    if (_countDownLabel) {
+        [_countDownLabel removeFromSuperview];
+    }
+    
     _changeTurnCount++;
     if (_changeTurnCount == 2) {
         _changeTurnCount = 0;
@@ -65,7 +82,7 @@
     turnLabel.textColor = [UIColor whiteColor];
     turnLabel.text = isMyTurn ? @"My Turn" : @"Opponent's Turn";
     turnLabel.textAlignment = NSTextAlignmentCenter;
-    turnLabel.font = [UIFont systemFontOfSize:40];
+    turnLabel.font = [UIFont systemFontOfSize:30];
     turnLabel.userInteractionEnabled = NO;
     [[[[UIApplication sharedApplication] delegate] window] addSubview:turnLabel];
     
@@ -79,6 +96,17 @@
             [turnLabel removeFromSuperview];
         }];
     }];
+}
+
+- (void)countDown {
+    _countDownLabel = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 4, [UIScreen mainScreen].bounds.size.height / 4, [UIScreen mainScreen].bounds.size.width  / 2, [UIScreen mainScreen].bounds.size.height / 2)];
+    _countDownLabel.backgroundColor = [UIColor clearColor];
+    _countDownLabel.textColor = [UIColor redColor];
+    _countDownLabel.textAlignment = NSTextAlignmentCenter;
+    _countDownLabel.font = [UIFont systemFontOfSize:40];
+    _countDownLabel.userInteractionEnabled = NO;
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:_countDownLabel];
+    
 }
 
 @end

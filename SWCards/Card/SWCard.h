@@ -22,7 +22,6 @@ typedef enum {
 @property (nonatomic, copy) NSString *cardType;
 @property (nonatomic, copy) NSString *cardImageName;
 
-
 @property (nonatomic, assign) NSInteger attack;
 @property (nonatomic, assign) NSInteger defense;
 @property (nonatomic, copy) NSString *minionType;
